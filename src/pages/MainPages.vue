@@ -6,40 +6,44 @@
 </template>
 
 <script>
-export default{
-	data(){
-		return{
+export default {
+	data() {
+		return {
 
 		}
 	},
-	methods:{
+	methods: {
 
 	}
 }
 </script>
 
 <style scoped>
-
-.MainPages{
-width: 70%;
-margin:  30vh auto;
-display: flex;
-flex-direction: column;
-align-items: center;
+.MainPages {
+	width: 70%;
+	margin: 30vh auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 10;
 }
-.MainPages h1{
+
+.MainPages h1 {
 	font-size: 8vh;
 }
-.MainPages button{
+
+.MainPages button {
 	background-color: rgb(0, 213, 255);
 	border: none;
 	padding: 4vh;
 	font-size: 4vh;
 	border-radius: 3px;
 	cursor: pointer;
-	transition: 1s ease;
+	transition: 0.5s ease;
 }
-.MainPages button:hover{
+
+.MainPages button:hover {
 	background-color: rgb(52, 175, 224);
+	transform: scale(1.1);
 }
 </style>
