@@ -4,6 +4,7 @@
       <div class="task-card">
         <h3>{{ task.name }}</h3>
         <p>{{ task.type }}</p>
+        <input type="checkbox" v-model="task.completed" @change="toggleTaskCompletion(task)" class="checkbox">
         <deleteButton @click="deleteTask(task)">Удалить</deleteButton>
         <editButton @click="edit(task)">Редактировать</editButton>
       </div>
@@ -23,9 +24,12 @@ export default {
     deleteTask(task) {
       this.$emit('deleteTask', task);
     },
-		edit(task){
+    edit(task){
       this.$emit('startEdit', task);
-		}
+    },
+    toggleTaskCompletion(task) {
+      this.$emit('updateTask', task); 
+    }
   }
 };
 </script>
@@ -38,6 +42,7 @@ export default {
 .task-card {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #f4f4f4;
   padding: 15px;
   border-radius: 8px;
@@ -57,6 +62,11 @@ export default {
 
 .task-card p {
   margin-bottom: 5px;
+}
+
+.checkbox {
+  transform: scale(1.9); 
+	margin-right: 1vw;
 }
 
 @media (max-width: 600px) {
