@@ -26,17 +26,19 @@ export default {
 	flex-direction: column;
 	align-items: center;
 	z-index: 10;
+	text-align: center;
 }
 
 .MainPages h1 {
-	font-size: 8vh;
+	font-size: 4vh; 
+	margin-bottom: 3vh; 
 }
 
 .MainPages button {
 	background-color: rgb(0, 213, 255);
 	border: none;
-	padding: 4vh;
-	font-size: 4vh;
+	padding: 3vh 4vh; 
+	font-size: 3vh;
 	border-radius: 3px;
 	cursor: pointer;
 	transition: 0.5s ease;
@@ -45,5 +47,21 @@ export default {
 .MainPages button:hover {
 	background-color: rgb(52, 175, 224);
 	transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+	.MainPages {
+		width: 90%; 
+		margin: 20vh auto;
+	}
+
+	.MainPages h1 {
+		font-size: 3vh;
+	}
+
+	.MainPages button {
+		padding: 2vh 3vh; 
+		font-size: 2vh; 
+	}
 }
 </style>
